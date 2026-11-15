@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RATNA JASTIP - Jasa Titip Indonesia ✈️ Taiwan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        skyBrand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        pinkBrand: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4.5s ease-in-out infinite',
+                        'fly-slow': 'flySlow 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        flySlow: {
+                            '0%, 100%': { transform: 'translate(0px, 0px) rotate(-3deg)' },
+                            '50%': { transform: 'translate(8px, -6px) rotate(2deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Latar belakang Hero biru langit pastel bersih & modern */
+        .clean-sky-hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 48%, #fdf2f8 100%);
+        }
+        /* Kartu kaca putih bersih dengan bayangan lembut */
+        .glass-card-clean {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 20px 45px -12px rgba(2, 132, 199, 0.14), 0 4px 16px -4px rgba(15, 23, 42, 0.04);
+        }
+        /* Kustomisasi range slider ongkir */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #e0f2fe;
+            height: 0.6rem;
+            border-radius: 999px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            background: linear-gradient(135deg, #0ea5e9, #ec4899);
+            height: 1.35rem;
+            width: 1.35rem;
+            border-radius: 999px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 3px 10px rgba(2, 132, 199, 0.35);
+        }
+        /* Hilangkan panah default input number */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-skyBrand-400 selection:text-white">
+
+    <!-- ================= 1. STICKY CLEAN GLASS NAVBAR ================= -->
+    <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-sky-100/80 shadow-2xs transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Brand Logo: RJ gradasi biru langit ke pink + RATNA biru langit -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-skyBrand-400 via-skyBrand-500 to-pinkBrand-500 flex items-center justify-center text-white font-display font-bold text-lg sm:text-xl tracking-tight shadow-md shadow-skyBrand-500/20 group-hover:scale-105 transition-transform">
+                    RJ
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight block leading-none">
+                        <span class="text-skyBrand-600">RATNA</span> <span class="text-slate-900">JASTIP</span>
+                    </span>
+                    <span class="text-[11px] font-semibold text-skyBrand-600 tracking-wider uppercase block mt-0.5">
+                        Indonesia ✈️ Taiwan
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#kalkulator" class="hover:text-skyBrand-600 transition-colors">Kalkulator</a>
+                <a href="#daftar-harga" class="hover:text-skyBrand-600 transition-colors">Daftar Harga</a>
+                <a href="#cara-kerja" class="hover:text-skyBrand-600 transition-colors">Cara Kerja</a>
+            </nav>
+
+            <!-- Green Chat WhatsApp Pill Button -->
+            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20tanya-tanya%20jastip%20Indonesia%20ke%20Taiwan." 
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold text-xs sm:text-sm px-4 py-2.5 sm:px-5 sm:py-3 rounded-full shadow-md shadow-emerald-500/25 transition-all">
+                <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+                <span>Chat WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ================= 2. CLEAN SKY-BLUE PASTEL HERO SECTION (2-COLUMN) ================= -->
+    <section class="relative clean-sky-hero pt-10 pb-20 sm:pt-16 sm:pb-24 overflow-hidden border-b border-sky-100">
+        <!-- Dekorasi Latar Belakang Lembut -->
+        <div class="absolute -top-24 -left-24 w-80 h-80 bg-skyBrand-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-12 right-0 w-96 h-96 bg-pinkBrand-100/60 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Siluet Tipis Menara Taipei 101 di Latar Belakang Kanan -->
+        <svg class="hidden lg:block absolute right-6 bottom-0 w-44 h-96 text-skyBrand-400/15 pointer-events-none select-none" viewBox="0 0 160 360" fill="currentColor">
+            <rect x="52" y="270" width="56" height="90" rx="4"/>
+            <polygon points="46,270 114,270 106,232 54,232"/>
+            <polygon points="48,232 112,232 104,194 56,194"/>
+            <polygon points="50,194 110,194 102,156 58,156"/>
+            <polygon points="52,156 108,156 100,118 60,118"/>
+            <polygon points="54,118 106,118 98,80 62,80"/>
+            <rect x="68" y="54" width="24" height="26" rx="3"/>
+            <rect x="77" y="10" width="6" height="44" rx="3"/>
+        </svg>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- KOLOM KIRI: Konten Utama & CTA -->
+                <div class="lg:col-span-6 text-center lg:text-left">
+                    <!-- Badge Rute -->
+                    <div class="inline-flex items-center gap-2 bg-white/90 border border-sky-200 text-skyBrand-600 font-bold text-xs sm:text-sm px-4 py-2 rounded-full shadow-xs mb-5">
+                        <span>JASA TITIP INDONESIA</span>
+                        <span class="text-pinkBrand-500">➔</span>
+                        <span>TAIWAN</span>
+                        <span class="animate-fly-slow inline-block ml-0.5">✈️</span>
+                    </div>
+
+                    <!-- Headline: RATNA dalam warna biru langit cerah -->
+                    <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 leading-[1.1] mb-4">
+                        <span class="text-skyBrand-600">RATNA</span> JASTIP
+                    </h1>
+
+                    <!-- Tagline -->
+                    <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+                        Kamu kirim gambarnya, kita kirim barangnya. <span class="text-slate-900 font-semibold">Pengeluaran bulanan jadi lebih hemat</span> dengan pengiriman udara cepat, aman, dan terpercaya.
+                    </p>
+
+                    <!-- Primary & Secondary CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 mb-8">
+                        <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20kirim%20%26%20titip%20barang%20dari%20Indonesia%20ke%20Taiwan." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-skyBrand-600 to-skyBrand-500 hover:from-skyBrand-500 hover:to-pinkBrand-500 text-white font-bold text-base px-7 py-4 rounded-2xl shadow-lg shadow-skyBrand-500/25 active:scale-95 transition-all">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Kirim & Titip Sekarang!</span>
+                        </a>
+
+                        <a href="#kalkulator" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-sky-50 text-slate-800 font-bold text-base px-7 py-4 rounded-2xl border border-sky-200 shadow-xs transition-all">
+                            <i class="fa-solid fa-calculator text-skyBrand-600"></i>
+                            <span>Hitung Ongkir</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 text-xs sm:text-sm font-semibold text-slate-600">
+                        <div class="inline-flex items-center gap-1.5 bg-white/80 px-3.5 py-2 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                            <span>Mulai Rp60.000/kg</span>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-white/80 px-3.5 py-2 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-box-open text-skyBrand-600"></i>
+                            <span>Jajanan & Skincare Aman</span>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-white/80 px-3.5 py-2 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-bolt text-amber-500"></i>
+                            <span>Fast Response WA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOLOM KANAN: Floating Hero Card BARANG UMUM 🇮🇩 ➔ 🇹🇼 + Ikon 2D Bersih -->
+                <div class="lg:col-span-6 relative">
+                    <!-- Badge Ilustrasi Dekoratif Melayang (Snack, Skincare & Taipei 101) -->
+                    <div class="hidden sm:flex items-center gap-2 absolute -top-5 -left-4 z-20 bg-white px-3.5 py-2 rounded-2xl shadow-md border border-pink-100 animate-float">
+                        <span class="w-8 h-8 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-cookie-bite"></i>
+                        </span>
+                        <div class="text-left">
+                            <p class="text-[11px] font-bold text-slate-800 leading-tight">Keripik & Mi Instan</p>
+                            <p class="text-[10px] text-slate-500">Bisa titip semua camilan</p>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:flex items-center gap-2 absolute -bottom-4 -right-3 z-20 bg-white px-3.5 py-2 rounded-2xl shadow-md border border-sky-100 animate-float" style="animation-delay: 1.5s;">
+                        <span class="w-8 h-8 rounded-xl bg-pink-100 text-pinkBrand-600 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-pump-soap"></i>
+                        </span>
+                        <div class="text-left">
+                            <p class="text-[11px] font-bold text-slate-800 leading-tight">Skincare & Losion</p>
+                            <p class="text-[10px] text-slate-500">Packing aman ke Taiwan</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Utama Daftar Tarif Ringkas -->
+                    <div class="glass-card-clean rounded-3xl p-6 sm:p-8 border border-white relative z-10">
+                        <!-- Header Kartu -->
+                        <div class="flex items-center justify-between border-b border-sky-100 pb-4 mb-5">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-skyBrand-600 block">Tarif Resmi Pengiriman</span>
+                                <h2 class="font-display font-bold text-xl sm:text-2xl text-slate-900 flex items-center gap-2">
+                                    <span>BARANG UMUM</span>
+                                    <span class="text-lg">🇮🇩 ➔ 🇹🇼</span>
+                                </h2>
+                            </div>
+                            <!-- Ikon Vektor 2D Pesawat & Menara Taipei 101 -->
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-skyBrand-100 to-pinkBrand-100 flex items-center justify-center text-skyBrand-600 border border-white shadow-xs" title="Kargo Udara ke Taipei & Seluruh Taiwan">
+                                <svg class="w-7 h-7" viewBox="0 0 36 36" fill="none">
+                                    <!-- Menara 101 mini -->
+                                    <rect x="7" y="18" width="6" height="12" rx="1" fill="#0284C7"/>
+                                    <rect x="8" y="12" width="4" height="6" rx="1" fill="#38BDF8"/>
+                                    <line x1="10" y1="7" x2="10" y2="12" stroke="#0284C7" stroke-width="1.6" stroke-linecap="round"/>
+                                    <!-- Pesawat 2D -->
+                                    <path d="M15 14L30 9L25 16L29 20L24 19L20 24L19 18L15 14Z" fill="#EC4899"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 6 Baris Tarif -->
+                        <div class="space-y-2.5">
+                            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20titip%20Barang%20Umum%20*1%20kg*%20(Rp84.500%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-4 py-3 rounded-2xl bg-slate-50/90 hover:bg-sky-50 border border-slate-100 hover:border-sky-200 transition-all group">
+                                <span class="font-display font-bold text-slate-800 text-sm sm:text-base">1 kg</span>
+                                <span class="text-xs text-slate-400 group-hover:text-skyBrand-600 transition-colors">➔</span>
+                                <span class="font-display font-bold text-slate-900 text-base sm:text-lg">Rp84.500<span class="text-xs font-sans font-medium text-slate-500">/kg</span></span>
+                            </a>
+
+                            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20titip%20Barang%20Umum%20*2%20-%205%20kg*%20(Rp76.500%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-4 py-3 rounded-2xl bg-slate-50/90 hover:bg-sky-50 border border-slate-100 hover:border-sky-200 transition-all group">
+                                <span class="font-display font-bold text-slate-800 text-sm sm:text-base">2 – 5 kg</span>
+                                <span class="text-xs text-slate-400 group-hover:text-skyBrand-600 transition-colors">➔</span>
+                                <span class="font-display font-bold text-slate-900 text-base sm:text-lg">Rp76.500<span class="text-xs font-sans font-medium text-slate-500">/kg</span></span>
+                            </a>
+
+                            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20titip%20Barang%20Umum%20*6%20-%2010%20kg*%20(Rp74.000%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-4 py-3 rounded-2xl bg-sky-50/80 hover:bg-sky-100/80 border border-sky-200/80 transition-all group">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-display font-bold text-skyBrand-900 text-sm sm:text-base">6 – 10 kg</span>
+                                    <span class="text-[10px] font-bold bg-skyBrand-600 text-white px-2 py-0.5 rounded-full">Populer</span>
+                                </div>
+                                <span class="text-xs text-skyBrand-500 group-hover:translate-x-0.5 transition-transform">➔</span>
+                                <span class="font-display font-bold text-skyBrand-600 text-base sm:text-lg">Rp74.000<span class="text-xs font-sans font-medium text-slate-500">/kg</span></span>
+                            </a>
+
+                            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20titip%20Barang%20Umum%20*11%20-%2020%20kg*%20(Rp71.000%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-4 py-3 rounded-2xl bg-slate-50/90 hover:bg-sky-50 border border-slate-100 hover:border-sky-200 transition-all group">
+                                <span class="font-display font-bold text-slate-800 text-sm sm:text-base">11 – 20 kg</span>
+                                <span class="text-xs text-slate-400 group-hover:text-skyBrand-600 transition-colors">➔</span>
+                                <span class="font-display font-bold text-slate-900 text-base sm:text-lg">Rp71.000<span class="text-xs font-sans font-medium text-slate-500">/kg</span></span>
+                            </a>
+
+                            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20titip%20Barang%20Umum%20*21%20-%2029%20kg*%20(Rp65.500%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-4 py-3 rounded-2xl bg-slate-50/90 hover:bg-sky-50 border border-slate-100 hover:border-sky-200 transition-all group">
+                                <span class="font-display font-bold text-slate-800 text-sm sm:text-base">21 – 29 kg</span>
+                                <span class="text-xs text-slate-400 group-hover:text-skyBrand-600 transition-colors">➔</span>
+                                <span class="font-display font-bold text-slate-900 text-base sm:text-lg">Rp65.500<span class="text-xs font-sans font-medium text-slate-500">/kg</span></span>
+                            </a>
+
+                            <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20titip%20Barang%20Umum%20paket%20Paling%20Hemat%20*30%20-%201.000%20kg*%20(Rp60.000%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-4 py-3.5 rounded-2xl bg-gradient-to-r from-skyBrand-600 to-pinkBrand-500 text-white shadow-md hover:opacity-95 transition-all group">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-display font-bold text-sm sm:text-base">30 – 1.000 kg</span>
+                                    <span class="text-[10px] font-extrabold bg-white text-pinkBrand-600 px-2 py-0.5 rounded-full uppercase">Hemat</span>
+                                </div>
+                                <span class="text-xs text-white/80 group-hover:translate-x-0.5 transition-transform">➔</span>
+                                <span class="font-display font-bold text-base sm:text-lg">Rp60.000<span class="text-xs font-sans font-normal text-white/90">/kg</span></span>
+                            </a>
+                        </div>
+
+                        <!-- Footer Kartu Hero -->
+                        <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>Klik baris paket untuk langsung chat WA</span>
+                            <span class="font-semibold text-skyBrand-600">+62 851-2315-7983</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. INTERACTIVE SHIPPING COST CALCULATOR ================= -->
+    <section id="kalkulator" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-xl shadow-sky-900/5 border border-sky-100 overflow-hidden">
+            <!-- Header Kalkulator -->
+            <div class="bg-gradient-to-r from-skyBrand-600 to-skyBrand-500 p-6 sm:p-8 text-white text-center">
+                <span class="inline-block bg-white/20 backdrop-blur-xs text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full mb-2">
+                    Simulasi Biaya Pengiriman
+                </span>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl">Kalkulator Ongkir Otomatis</h2>
+                <p class="text-sky-100 text-sm sm:text-base mt-1">Atur perkiraan berat paket Anda (1 – 1.000 kg) untuk melihat estimasi tarif & penghematan.</p>
+            </div>
+
+            <!-- Body Kalkulator -->
+            <div class="p-6 sm:p-8 lg:p-10">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Kolom Input Slider & Angka -->
+                    <div class="md:col-span-6 space-y-5">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="weightInput" class="text-sm font-bold text-slate-700">
+                                    Perkiraan Berat Paket (kg)
+                                </label>
+                                <span class="text-xs font-semibold text-skyBrand-600">Min. 1 kg – Maks. 1.000 kg</span>
+                            </div>
+
+                            <!-- Input Angka + Tombol - / + -->
+                            <div class="flex items-center gap-3 mb-4">
+                                <button type="button" id="decreaseWeight" aria-label="Kurangi berat"
+                                    class="w-12 h-12 rounded-2xl bg-slate-100 hover:bg-sky-100 text-slate-700 hover:text-skyBrand-600 font-bold text-xl flex items-center justify-center transition-colors active:scale-95">
+                                    -
+                                </button>
+                                <div class="relative flex-1">
+                                    <input type="number" id="weightInput" min="1" max="1000" step="1" value="8"
+                                        class="w-full h-14 text-center font-display font-bold text-2xl sm:text-3xl text-slate-900 bg-sky-50/70 border-2 border-skyBrand-400 rounded-2xl focus:outline-none focus:ring-4 focus:ring-skyBrand-400/20">
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">KG</span>
+                                </div>
+                                <button type="button" id="increaseWeight" aria-label="Tambah berat"
+                                    class="w-12 h-12 rounded-2xl bg-slate-100 hover:bg-sky-100 text-slate-700 hover:text-skyBrand-600 font-bold text-xl flex items-center justify-center transition-colors active:scale-95">
+                                    +
+                                </button>
+                            </div>
+
+                            <!-- Slider Interaktif (1 - 100 kg untuk kenyamanan geser, input manual bisa sampai 1000 kg) -->
+                            <input type="range" id="weightSlider" min="1" max="100" value="8" class="w-full">
+                            <div class="flex justify-between text-[11px] font-medium text-slate-400 mt-1">
+                                <span>1 kg</span>
+                                <span>25 kg</span>
+                                <span>50 kg</span>
+                                <span>75 kg</span>
+                                <span>100+ kg</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Preset Buttons -->
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500 mb-2">Pilih cepat berat populer:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" data-preset="1" class="preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-skyBrand-500 hover:text-white text-slate-700 transition-colors">1 kg</button>
+                                <button type="button" data-preset="5" class="preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-skyBrand-500 hover:text-white text-slate-700 transition-colors">5 kg</button>
+                                <button type="button" data-preset="8" class="preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-skyBrand-500 text-white transition-colors">8 kg</button>
+                                <button type="button" data-preset="15" class="preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-skyBrand-500 hover:text-white text-slate-700 transition-colors">15 kg</button>
+                                <button type="button" data-preset="25" class="preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-skyBrand-500 hover:text-white text-slate-700 transition-colors">25 kg</button>
+                                <button type="button" data-preset="30" class="preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-skyBrand-500 hover:text-white text-slate-700 transition-colors">30 kg</button>
+                            </div>
+                        </div>
+
+                        <!-- Pesan Validasi Non-Blocking -->
+                        <div id="calcNotice" class="hidden bg-amber-50 border border-amber-200 text-amber-800 text-xs font-medium px-4 py-2.5 rounded-xl">
+                            Berat pengiriman disesuaikan ke rentang resmi 1 kg – 1.000 kg.
+                        </div>
+                    </div>
+
+                    <!-- Kolom Hasil Live Calculation -->
+                    <div class="md:col-span-6 bg-gradient-to-br from-sky-50 via-white to-pink-50/60 rounded-3xl p-6 sm:p-7 border-2 border-sky-200 shadow-sm">
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-skyBrand-600">Hasil Perhitungan</span>
+                            <span id="tierBadge" class="bg-skyBrand-100 text-skyBrand-700 text-xs font-bold px-3 py-1 rounded-full">
+                                Kategori: 6 – 10 kg
+                            </span>
+                        </div>
+
+                        <div class="space-y-3 border-b border-sky-100 pb-4 mb-4">
+                            <div class="flex justify-between text-sm text-slate-600">
+                                <span>Berat Pengiriman:</span>
+                                <span id="displayWeight" class="font-bold text-slate-900">8 kg</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-slate-600">
+                                <span>Tarif per Kilogram:</span>
+                                <span id="displayRate" class="font-bold text-skyBrand-600">Rp74.000/kg</span>
+                            </div>
+                            <!-- Savings Badge -->
+                            <div id="savingsRow" class="flex items-center justify-between bg-emerald-50 border border-emerald-200 px-3.5 py-2 rounded-xl">
+                                <span class="text-xs font-bold text-emerald-700 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-tag"></i> Lebih Hemat:
+                                </span>
+                                <span id="displaySavings" class="text-xs sm:text-sm font-extrabold text-emerald-600">Rp84.000</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-baseline justify-between mb-6">
+                            <span class="text-sm font-bold text-slate-700">Estimasi Total Ongkir:</span>
+                            <span id="displayTotal" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">Rp592.000</span>
+                        </div>
+
+                        <!-- Tombol Pesan & Kirim via WhatsApp dengan Pesan Terisi Otomatis -->
+                        <a id="waCalcBtn" href="https://wa.me/6285123157983" target="_blank" rel="noopener noreferrer"
+                           class="w-full inline-flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold text-sm sm:text-base py-4 px-6 rounded-2xl shadow-lg shadow-emerald-500/25 transition-all">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Pesan & Kirim via WhatsApp</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. OFFICIAL RATE CARDS GRID (6 TIERS) ================= -->
+    <section id="daftar-harga" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block bg-skyBrand-100 text-skyBrand-600 font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full mb-3">
+                Transparan & Terjangkau
+            </span>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-3">
+                Daftar Harga Resmi Barang Umum
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                Rute pengiriman udara <strong class="text-slate-800">Indonesia 🇮🇩 ➔ Taiwan 🇹🇼</strong>. Semakin berat paket Anda, semakin hemat tarif per kilogramnya!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Kartu 1: 1 kg -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-sm hover:shadow-lg hover:border-skyBrand-400 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-sky-100 text-skyBrand-600 font-display font-bold text-lg px-4 py-1.5 rounded-2xl">
+                            1 kg
+                        </span>
+                        <span class="w-10 h-10 rounded-xl bg-sky-50 text-skyBrand-500 flex items-center justify-center">
+                            <i class="fa-solid fa-box"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tarif Pengiriman</p>
+                    <div class="flex items-baseline gap-1 mt-1 mb-4">
+                        <span class="font-display font-bold text-3xl text-slate-900">Rp84.500</span>
+                        <span class="text-sm font-semibold text-slate-500">/kg</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6">Cocok untuk kirim skincare satuan, dokumen ringan, atau sampel produk.</p>
+                </div>
+                <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20pilih%20paket%20Barang%20Umum%20*1%20kg*%20(Rp84.500%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-sky-50 hover:bg-skyBrand-600 text-skyBrand-600 hover:text-white font-bold text-sm py-3.5 px-5 rounded-2xl border border-sky-200 hover:border-skyBrand-600 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Pilih Paket Ini</span>
+                </a>
+            </div>
+
+            <!-- Kartu 2: 2 - 5 kg -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-sm hover:shadow-lg hover:border-skyBrand-400 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-sky-100 text-skyBrand-600 font-display font-bold text-lg px-4 py-1.5 rounded-2xl">
+                            2 – 5 kg
+                        </span>
+                        <span class="w-10 h-10 rounded-xl bg-sky-50 text-skyBrand-500 flex items-center justify-center">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tarif Pengiriman</p>
+                    <div class="flex items-baseline gap-1 mt-1 mb-4">
+                        <span class="font-display font-bold text-3xl text-slate-900">Rp76.500</span>
+                        <span class="text-sm font-semibold text-slate-500">/kg</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6">Pas untuk stok keripik, mi instan, sambal kemasan, dan losion bulanan.</p>
+                </div>
+                <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20pilih%20paket%20Barang%20Umum%20*2%20-%205%20kg*%20(Rp76.500%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-sky-50 hover:bg-skyBrand-600 text-skyBrand-600 hover:text-white font-bold text-sm py-3.5 px-5 rounded-2xl border border-sky-200 hover:border-skyBrand-600 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Pilih Paket Ini</span>
+                </a>
+            </div>
+
+            <!-- Kartu 3: 6 - 10 kg -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-sm hover:shadow-lg hover:border-skyBrand-400 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-sky-100 text-skyBrand-600 font-display font-bold text-lg px-4 py-1.5 rounded-2xl">
+                            6 – 10 kg
+                        </span>
+                        <span class="w-10 h-10 rounded-xl bg-pink-50 text-pinkBrand-500 flex items-center justify-center">
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tarif Pengiriman</p>
+                    <div class="flex items-baseline gap-1 mt-1 mb-4">
+                        <span class="font-display font-bold text-3xl text-slate-900">Rp74.000</span>
+                        <span class="text-sm font-semibold text-slate-500">/kg</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6">Favorit pelanggan untuk titipan belanja bulanan, baju, dan camilan.</p>
+                </div>
+                <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20pilih%20paket%20Barang%20Umum%20*6%20-%2010%20kg*%20(Rp74.000%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-sky-50 hover:bg-skyBrand-600 text-skyBrand-600 hover:text-white font-bold text-sm py-3.5 px-5 rounded-2xl border border-sky-200 hover:border-skyBrand-600 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Pilih Paket Ini</span>
+                </a>
+            </div>
+
+            <!-- Kartu 4: 11 - 20 kg -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-sm hover:shadow-lg hover:border-skyBrand-400 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-sky-100 text-skyBrand-600 font-display font-bold text-lg px-4 py-1.5 rounded-2xl">
+                            11 – 20 kg
+                        </span>
+                        <span class="w-10 h-10 rounded-xl bg-sky-50 text-skyBrand-500 flex items-center justify-center">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tarif Pengiriman</p>
+                    <div class="flex items-baseline gap-1 mt-1 mb-4">
+                        <span class="font-display font-bold text-3xl text-slate-900">Rp71.000</span>
+                        <span class="text-sm font-semibold text-slate-500">/kg</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6">Lebih irit untuk patungan ongkir bersama teman atau stok beberapa bulan.</p>
+                </div>
+                <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20pilih%20paket%20Barang%20Umum%20*11%20-%2020%20kg*%20(Rp71.000%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-sky-50 hover:bg-skyBrand-600 text-skyBrand-600 hover:text-white font-bold text-sm py-3.5 px-5 rounded-2xl border border-sky-200 hover:border-skyBrand-600 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Pilih Paket Ini</span>
+                </a>
+            </div>
+
+            <!-- Kartu 5: 21 - 29 kg -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-sm hover:shadow-lg hover:border-skyBrand-400 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-sky-100 text-skyBrand-600 font-display font-bold text-lg px-4 py-1.5 rounded-2xl">
+                            21 – 29 kg
+                        </span>
+                        <span class="w-10 h-10 rounded-xl bg-sky-50 text-skyBrand-500 flex items-center justify-center">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tarif Pengiriman</p>
+                    <div class="flex items-baseline gap-1 mt-1 mb-4">
+                        <span class="font-display font-bold text-3xl text-slate-900">Rp65.500</span>
+                        <span class="text-sm font-semibold text-slate-500">/kg</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6">Tarif grosir hemat untuk pengiriman partai menengah ke seluruh Taiwan.</p>
+                </div>
+                <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20pilih%20paket%20Barang%20Umum%20*21%20-%2029%20kg*%20(Rp65.500%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-sky-50 hover:bg-skyBrand-600 text-skyBrand-600 hover:text-white font-bold text-sm py-3.5 px-5 rounded-2xl border border-sky-200 hover:border-skyBrand-600 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Pilih Paket Ini</span>
+                </a>
+            </div>
+
+            <!-- Kartu 6: 30 - 1.000 kg (Paling Hemat) -->
+            <div class="bg-gradient-to-b from-sky-50 via-white to-pink-50/40 rounded-3xl p-6 sm:p-7 border-2 border-skyBrand-500 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between relative">
+                <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-skyBrand-600 to-pinkBrand-500 text-white text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
+                    Paling Hemat
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-skyBrand-600 text-white font-display font-bold text-lg px-4 py-1.5 rounded-2xl">
+                            30 – 1.000 kg
+                        </span>
+                        <span class="w-10 h-10 rounded-xl bg-sky-100 text-skyBrand-600 flex items-center justify-center">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs font-semibold text-skyBrand-600 uppercase tracking-wider">Tarif Super Hemat</p>
+                    <div class="flex items-baseline gap-1 mt-1 mb-4">
+                        <span class="font-display font-bold text-3xl text-skyBrand-600">Rp60.000</span>
+                        <span class="text-sm font-semibold text-slate-500">/kg</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6">Tarif terbaik untuk kargo besar, stok usaha, atau kirim bersama komunitas.</p>
+                </div>
+                <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20pilih%20paket%20Paling%20Hemat%20Barang%20Umum%20*30%20-%201.000%20kg*%20(Rp60.000%2Fkg)%20Indonesia%20ke%20Taiwan." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-skyBrand-600 to-skyBrand-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold text-sm py-3.5 px-5 rounded-2xl shadow-md transition-all">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Pilih Paket Ini</span>
+                </a>
+            </div>
+
+        </div>
+
+        <p class="text-center text-xs sm:text-sm font-medium text-slate-500 mt-8">
+            *Harga dapat berubah sewaktu-waktu. Untuk barang kategori khusus, silakan konsultasikan gratis via WhatsApp.
+        </p>
+    </section>
+
+    <!-- ================= 5A. CARA TITIP BARANG (3 CLEAN STEP CARDS) ================= -->
+    <section id="cara-kerja" class="py-16 sm:py-20 bg-sky-50/70 border-y border-sky-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="inline-block bg-white text-skyBrand-600 font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border border-sky-200 mb-3">
+                    3 Langkah Mudah
+                </span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-3">
+                    Cara Titip Barang
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Cukup kirim gambar barang impian Anda, sisanya biar tim <strong class="text-skyBrand-600">RATNA</strong> JASTIP yang urus sampai tiba di Taiwan!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-3xl p-7 border border-sky-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-skyBrand-400 to-skyBrand-600 text-white font-display font-bold text-2xl flex items-center justify-center shadow-md shadow-skyBrand-500/20 mb-5">
+                        1
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Kirim Gambar atau Link</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Kirimkan foto produk, tangkapan layar, atau link belanja online Indonesia ke WhatsApp admin kami.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white rounded-3xl p-7 border border-sky-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-skyBrand-500 to-pinkBrand-500 text-white font-display font-bold text-2xl flex items-center justify-center shadow-md shadow-pinkBrand-500/20 mb-5">
+                        2
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Timbang & Konfirmasi Biaya</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Barang dibelikan/diterima di gudang Indonesia, ditimbang secara transparan, lalu rincian ongkir diinfokan ke Anda.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white rounded-3xl p-7 border border-sky-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-white font-display font-bold text-2xl flex items-center justify-center shadow-md shadow-emerald-500/20 mb-5">
+                        3
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Paket Terbang ke Taiwan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Paket dikemas rapi dan langsung diterbangkan menuju alamat rumah atau tempat kerja Anda di Taiwan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 5B. KENAPA PILIH RATNA JASTIP? (4 BENEFIT CARDS) ================= -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block bg-pink-50 text-pinkBrand-600 font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border border-pink-100 mb-3">
+                Keunggulan Layanan
+            </span>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-3">
+                Kenapa Pilih Ratna Jastip?
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                Membantu memenuhi kerinduan produk asli Indonesia di Taiwan dengan biaya pengiriman yang bersahabat.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Benefit 1 -->
+            <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-xs hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-2xl bg-sky-100 text-skyBrand-600 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Timbangan Jujur & Jelas</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Setiap paket difoto saat penimbangan sehingga berat dan total biaya benar-benar transparan.
+                </p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-xs hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pinkBrand-600 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Tarif Bertingkat Hemat</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Diskon otomatis per kilogram mulai dari 2 kg hingga 1.000 kg agar belanja bulanan lebih irit.
+                </p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-xs hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-box-archive"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Bisa Gabung Banyak Toko</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Belanja dari beberapa toko berbeda di Indonesia bisa digabung dalam satu pengiriman ke Taiwan.
+                </p>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-xs hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Konsultasi Gratis via WA</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Admin ramah siap menjawab pertanyaan produk, estimasi berat, dan jadwal penerbangan kapan saja.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 6. CLEAN FOOTER ================= -->
+    <footer class="bg-slate-900 text-slate-300 pt-12 pb-24 sm:pb-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-800 pb-8">
+                <!-- Brand Info -->
+                <div class="flex items-center gap-3.5 text-center md:text-left">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-skyBrand-400 via-skyBrand-500 to-pinkBrand-500 flex items-center justify-center text-white font-display font-bold text-lg shrink-0">
+                        RJ
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-2xl text-white block leading-none">
+                            <span class="text-skyBrand-400">RATNA</span> JASTIP
+                        </span>
+                        <p class="text-xs sm:text-sm text-sky-300 font-medium mt-1">
+                            Jasa Titip Indonesia ✈️ Taiwan — Kamu kirim gambarnya, kita kirim barangnya.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kontak WhatsApp -->
+                <div class="flex flex-col items-center md:items-end gap-2">
+                    <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Hubungi Kami via WhatsApp</span>
+                    <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20tanya%20pengiriman%20Indonesia%20ke%20Taiwan." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2.5 bg-slate-800 hover:bg-emerald-600 text-white font-bold px-5 py-3 rounded-2xl border border-slate-700 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i>
+                        <span>+62 851-2315-7983</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <p>&copy; <span id="currentYear"></span> RATNA JASTIP. Hak Cipta Dilindungi.</p>
+                <p>*Harga dapat berubah sewaktu-waktu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/6285123157983?text=Halo%20RATNA%20JASTIP!%20Saya%20mau%20tanya%20jastip%20Indonesia%20ke%20Taiwan." 
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Chat WhatsApp Ratna Jastip"
+       class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold pl-4 pr-5 py-3.5 rounded-full shadow-xl shadow-emerald-600/30 border-2 border-white hover:scale-105 active:scale-95 transition-all">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="text-xs sm:text-sm font-display tracking-wide">Chat WhatsApp</span>
+    </a>
+
+    <!-- ================= SCRIPT KALKULATOR & INTERAKSI ================= -->
+    <script>
+        // Set tahun otomatis
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const WA_NUMBER = '6285123157983';
+
+        const weightInput = document.getElementById('weightInput');
+        const weightSlider = document.getElementById('weightSlider');
+        const decreaseBtn = document.getElementById('decreaseWeight');
+        const increaseBtn = document.getElementById('increaseWeight');
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        const tierBadge = document.getElementById('tierBadge');
+        const displayWeight = document.getElementById('displayWeight');
+        const displayRate = document.getElementById('displayRate');
+        const displayTotal = document.getElementById('displayTotal');
+        const savingsRow = document.getElementById('savingsRow');
+        const displaySavings = document.getElementById('displaySavings');
+        const waCalcBtn = document.getElementById('waCalcBtn');
+        const calcNotice = document.getElementById('calcNotice');
+
+        function formatRupiah(angka) {
+            return 'Rp' + angka.toLocaleString('id-ID');
+        }
+
+        function getRateInfo(weight) {
+            if (weight <= 1) {
+                return { rate: 84500, label: '1 kg' };
+            } else if (weight >= 2 && weight <= 5) {
+                return { rate: 76500, label: '2 – 5 kg' };
+            } else if (weight >= 6 && weight <= 10) {
+                return { rate: 74000, label: '6 – 10 kg' };
+            } else if (weight >= 11 && weight <= 20) {
+                return { rate: 71000, label: '11 – 20 kg' };
+            } else if (weight >= 21 && weight <= 29) {
+                return { rate: 65500, label: '21 – 29 kg' };
+            } else {
+                return { rate: 60000, label: '30 – 1.000 kg' };
+            }
+        }
+
+        function highlightActivePreset(weight) {
+            presetBtns.forEach(btn => {
+                const presetVal = parseInt(btn.getAttribute('data-preset'), 10);
+                if (presetVal === weight) {
+                    btn.classList.remove('bg-slate-100', 'text-slate-700');
+                    btn.classList.add('bg-skyBrand-500', 'text-white');
+                } else {
+                    btn.classList.remove('bg-skyBrand-500', 'text-white');
+                    btn.classList.add('bg-slate-100', 'text-slate-700');
+                }
+            });
+        }
+
+        function updateCalculator() {
+            let rawVal = parseFloat(weightInput.value);
+
+            if (isNaN(rawVal) || rawVal < 1) {
+                rawVal = 1;
+                calcNotice.classList.remove('hidden');
+            } else if (rawVal > 1000) {
+                rawVal = 1000;
+                weightInput.value = 1000;
+                calcNotice.classList.remove('hidden');
+            } else {
+                calcNotice.classList.add('hidden');
+            }
+
+            const effectiveWeight = Math.ceil(rawVal);
+            weightSlider.value = Math.min(effectiveWeight, 100);
+
+            const { rate, label } = getRateInfo(effectiveWeight);
+            const totalCost = effectiveWeight * rate;
+            const baseCost = effectiveWeight * 84500;
+            const savings = baseCost - totalCost;
+
+            tierBadge.textContent = `Kategori: ${label}`;
+            displayWeight.textContent = `${effectiveWeight} kg`;
+            displayRate.textContent = `${formatRupiah(rate)}/kg`;
+            displayTotal.textContent = formatRupiah(totalCost);
+
+            if (savings > 0) {
+                savingsRow.classList.remove('hidden');
+                displaySavings.textContent = formatRupiah(savings);
+            } else {
+                savingsRow.classList.add('hidden');
+            }
+
+            highlightActivePreset(effectiveWeight);
+
+            const waMessage = `Halo RATNA JASTIP! Saya mau titip barang Indonesia ke Taiwan dengan estimasi:\n• Berat: *${effectiveWeight} kg* (Kategori ${label})\n• Tarif: *${formatRupiah(rate)}/kg*\n• Estimasi Ongkir: *${formatRupiah(totalCost)}*\n\nMohon info langkah selanjutnya ya!`;
+            waCalcBtn.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+        }
+
+        // Event Listeners
+        weightSlider.addEventListener('input', () => {
+            weightInput.value = weightSlider.value;
+            updateCalculator();
+        });
+
+        weightInput.addEventListener('input', updateCalculator);
+        weightInput.addEventListener('blur', () => {
+            if (!weightInput.value || parseFloat(weightInput.value) < 1) {
+                weightInput.value = 1;
+                updateCalculator();
+            }
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            const current = parseInt(weightInput.value, 10) || 1;
+            if (current > 1) {
+                weightInput.value = current - 1;
+                updateCalculator();
+            }
+        });
+
+        increaseBtn.addEventListener('click', () => {
+            const current = parseInt(weightInput.value, 10) || 1;
+            if (current < 1000) {
+                weightInput.value = current + 1;
+                updateCalculator();
+            }
+        });
+
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                weightInput.value = btn.getAttribute('data-preset');
+                updateCalculator();
+            });
+        });
+
+        // Inisialisasi awal
+        updateCalculator();
+    </script>
+</body>
+</html>
