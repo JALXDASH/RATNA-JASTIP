@@ -1,1 +1,0 @@
-# RATNA-JASTIP
